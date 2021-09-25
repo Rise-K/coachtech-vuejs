@@ -1,0 +1,39 @@
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+.tabs {
+  overflow: hidden;
+}
+
+.tabs li,
+.tabs label {
+  float: left;
+  padding: 5px 20px;
+  border: 1px solid rgb(241, 241, 241);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.tabs li:not(:first-child),
+.tabs label:not(:first-of-type) {
+  border-left: none;
+}
+
+.tabs li.active,
+.tabs :checked + label {
+  background-color: #000;
+  border-color: #000;
+  color: #FFF;
+  cursor: auto;
+}
+
+.contents{
+  overflow: hidden;
+  margin-top: -1px;
+}

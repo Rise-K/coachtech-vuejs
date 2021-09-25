@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/tab.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>タブ</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="vue">
+        <ul class="tabs">
+          <li v-on:click="change('1')" v-bind:class="{'active': isActive === '1'}">タブ1</li>
+          <li v-on:click="change('2')" v-bind:class="{'active': isActive === '2'}">タブ2</li>
+          <li v-on:click="change('3')" v-bind:class="{'active': isActive === '3'}">タブ3</li>
+        </ul>
+        <ul class="contents">
+          <li v-if="isActive === '1'">コンテンツ1</li>
+          <li v-else-if="isActive === '2'">コンテンツ2</li>
+          <li v-else-if="isActive === '3'">コンテンツ3</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          isActive: '1'
+        },
+        methods: {
+          change: function (num) {
+            this.isActive = num
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
+
+
