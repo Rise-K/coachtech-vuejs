@@ -14,10 +14,10 @@
   <script>
     Vue.component('open-modal', {
       template: `
-      <div id="overlay">
+      <div id="overlay" @click.self="clickEvent">
           <div id="content">
             <p><slot></slot></p>
-            <button v-on:click="clickEvent">閉じる</button>
+            <button @click="clickEvent">閉じる</button>
           </div>
       </div>
       `,
